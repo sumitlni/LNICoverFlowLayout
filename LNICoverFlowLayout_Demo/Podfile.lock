@@ -2,15 +2,11 @@ PODS:
   - LNICoverFlowLayout (0.1.0)
 
 DEPENDENCIES:
-  - LNICoverFlowLayout (from `../`)
-
-EXTERNAL SOURCES:
-  LNICoverFlowLayout:
-    :path: "../"
+  - LNICoverFlowLayout
 
 SPEC CHECKSUMS:
   LNICoverFlowLayout: 53838c593114437d609151aed1c189f6cf61f212
 
-PODFILE CHECKSUM: ec93c1cdf12b38e2cee6698bafe41d18aec535b6
+PODFILE CHECKSUM: f787fcd34fb3ced11a89c5c7234737be7a080f83
 
 COCOAPODS: 1.0.0

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A6FCC46E7C825A97445157746E54653 /* LNICoverFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F120F9E915A62DFBD71D3BD6FDD3F8AC /* LNICoverFlowLayout.swift */; };
 		4971B4B48D22E93A66E24EDB919C68E3 /* Pods-LNICoverFlowLayout_Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FE059C91395202A65F893F49B1C3E /* Pods-LNICoverFlowLayout_Demo-dummy.m */; };
-		8C8BEB0E6310206CD00014FAAC9700B4 /* LNICoverFlowLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF56BE8F5ECEFDC9B4231036B79E4EE2 /* LNICoverFlowLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C8BEB0E6310206CD00014FAAC9700B4 /* LNICoverFlowLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0696ABE71A3E33D39661AB46ED2AD156 /* LNICoverFlowLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7A505A73C2D6C6518E763E77597EA9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
 		BD006DDD3B8B642959B0B93F13100D13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		CF7E651A996399CFC029E7B2879DD3AA /* LNICoverFlowLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D8503D4C37BB9459E02A88C3DEC1AA /* LNICoverFlowLayout-dummy.m */; };
+		EFB53DB4552CA6388422DD6C8FEECB87 /* LNICoverFlowLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E2068100E670496BB551961EA7A551 /* LNICoverFlowLayout-dummy.m */; };
+		F34652D1F20C532FC19A6830BE66615E /* LNICoverFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B48EFAF86E7EF20748608E08E1324 /* LNICoverFlowLayout.swift */; };
 		FA3CE9EAC0C9C127A7DE9B46A987736A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
 		FE8CBCDEFE712457A24BAA8F41F3ACA0 /* Pods-LNICoverFlowLayout_Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE76B51D6313300CF71547AFC9CE889 /* Pods-LNICoverFlowLayout_Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -28,27 +28,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07C853005B4DD2A8561363B0C342F10F /* LNICoverFlowLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LNICoverFlowLayout-prefix.pch"; sourceTree = "<group>"; };
+		0696ABE71A3E33D39661AB46ED2AD156 /* LNICoverFlowLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LNICoverFlowLayout-umbrella.h"; sourceTree = "<group>"; };
 		0DE76B51D6313300CF71547AFC9CE889 /* Pods-LNICoverFlowLayout_Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LNICoverFlowLayout_Demo-umbrella.h"; sourceTree = "<group>"; };
 		0EC6014D1BCCEBB70A42AA6BE535AE7B /* Pods-LNICoverFlowLayout_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LNICoverFlowLayout_Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		25BBFFDDC8EA18D512E774AF802E6EC4 /* LNICoverFlowLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LNICoverFlowLayout.xcconfig; sourceTree = "<group>"; };
 		3351FF33F3B8A61EE74CC42E9914C0D6 /* Pods-LNICoverFlowLayout_Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LNICoverFlowLayout_Demo.modulemap"; sourceTree = "<group>"; };
 		475A38DE84DFB2493609DF75A80AE47E /* Pods-LNICoverFlowLayout_Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LNICoverFlowLayout_Demo-resources.sh"; sourceTree = "<group>"; };
 		5C4FE059C91395202A65F893F49B1C3E /* Pods-LNICoverFlowLayout_Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LNICoverFlowLayout_Demo-dummy.m"; sourceTree = "<group>"; };
+		5C5B48EFAF86E7EF20748608E08E1324 /* LNICoverFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LNICoverFlowLayout.swift; path = LNICoverFlowLayout/Classes/LNICoverFlowLayout.swift; sourceTree = "<group>"; };
+		643B9FDE22AF080708F88023A201D51E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EE5CD8C910CA2E5F2316FE4249EB0D4 /* LNICoverFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LNICoverFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C32CCAFC2233F2154C31E594C87DDE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F968C6679748D2C796BABE33E8323E8 /* LNICoverFlowLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LNICoverFlowLayout.modulemap; sourceTree = "<group>"; };
+		9387A0B31E2AE8B9C6ED78A9BCAFA56C /* LNICoverFlowLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LNICoverFlowLayout-prefix.pch"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93EFE9590A35DAF4CD1F7591924BDA53 /* Pods-LNICoverFlowLayout_Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LNICoverFlowLayout_Demo-acknowledgements.plist"; sourceTree = "<group>"; };
 		A17909BC8AB4F66D7643F21C88821FF2 /* Pods-LNICoverFlowLayout_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LNICoverFlowLayout_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A33B246BF0B44320D1FBCADA664278BB /* Pods-LNICoverFlowLayout_Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LNICoverFlowLayout_Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BF56BE8F5ECEFDC9B4231036B79E4EE2 /* LNICoverFlowLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LNICoverFlowLayout-umbrella.h"; sourceTree = "<group>"; };
-		C6D8503D4C37BB9459E02A88C3DEC1AA /* LNICoverFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LNICoverFlowLayout-dummy.m"; sourceTree = "<group>"; };
-		D3C5F74D658D611F8E3702DCE0CC8884 /* LNICoverFlowLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LNICoverFlowLayout.xcconfig; sourceTree = "<group>"; };
+		A5E2068100E670496BB551961EA7A551 /* LNICoverFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LNICoverFlowLayout-dummy.m"; sourceTree = "<group>"; };
 		D4BBB0F7D8CBEBCB53727177ABF65FFC /* Pods_LNICoverFlowLayout_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNICoverFlowLayout_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B2A723EB1E5832BCBCB449EF87646C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		F120F9E915A62DFBD71D3BD6FDD3F8AC /* LNICoverFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LNICoverFlowLayout.swift; sourceTree = "<group>"; };
+		F26E3A6704693464807322D1428E1375 /* LNICoverFlowLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LNICoverFlowLayout.modulemap; sourceTree = "<group>"; };
 		F8B7D423E4A158C916222E6A9A4CC677 /* Pods-LNICoverFlowLayout_Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LNICoverFlowLayout_Demo-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,18 +73,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15343453BC58DFEF01A9436BE331CFE0 /* Support Files */ = {
+		0B2CB9B4AE0C86BAA170C92964B840D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8C32CCAFC2233F2154C31E594C87DDE3 /* Info.plist */,
-				8F968C6679748D2C796BABE33E8323E8 /* LNICoverFlowLayout.modulemap */,
-				D3C5F74D658D611F8E3702DCE0CC8884 /* LNICoverFlowLayout.xcconfig */,
-				C6D8503D4C37BB9459E02A88C3DEC1AA /* LNICoverFlowLayout-dummy.m */,
-				07C853005B4DD2A8561363B0C342F10F /* LNICoverFlowLayout-prefix.pch */,
-				BF56BE8F5ECEFDC9B4231036B79E4EE2 /* LNICoverFlowLayout-umbrella.h */,
+				609F96DF2C23822CF07018247B437B7D /* LNICoverFlowLayout */,
 			);
-			name = "Support Files";
-			path = "LNICoverFlowLayout_Demo/Pods/Target Support Files/LNICoverFlowLayout";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -112,33 +106,38 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		65F1F1BF4919A9C0F3CDD90A4EDDD338 /* Classes */ = {
+		609F96DF2C23822CF07018247B437B7D /* LNICoverFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				F120F9E915A62DFBD71D3BD6FDD3F8AC /* LNICoverFlowLayout.swift */,
+				5C5B48EFAF86E7EF20748608E08E1324 /* LNICoverFlowLayout.swift */,
+				8DD00FF637E57760343FBC133072DC82 /* Support Files */,
 			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		699184317295FB3E9BD099B11609A5D8 /* LNICoverFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				F06AD87A36559B5E27013AABF9DE611B /* LNICoverFlowLayout */,
-				15343453BC58DFEF01A9436BE331CFE0 /* Support Files */,
-			);
-			name = LNICoverFlowLayout;
-			path = ../..;
+			path = LNICoverFlowLayout;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				CBE56E4455337C7D6A5C861CD7444243 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				0B2CB9B4AE0C86BAA170C92964B840D8 /* Pods */,
 				53254FF430E68A816D89B70A9A3299EE /* Products */,
 				55B736E3C96B132402CCC181B56160CE /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8DD00FF637E57760343FBC133072DC82 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				643B9FDE22AF080708F88023A201D51E /* Info.plist */,
+				F26E3A6704693464807322D1428E1375 /* LNICoverFlowLayout.modulemap */,
+				25BBFFDDC8EA18D512E774AF802E6EC4 /* LNICoverFlowLayout.xcconfig */,
+				A5E2068100E670496BB551961EA7A551 /* LNICoverFlowLayout-dummy.m */,
+				9387A0B31E2AE8B9C6ED78A9BCAFA56C /* LNICoverFlowLayout-prefix.pch */,
+				0696ABE71A3E33D39661AB46ED2AD156 /* LNICoverFlowLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LNICoverFlowLayout";
 			sourceTree = "<group>";
 		};
 		AA7DB1642FAB60E65FA2A54086B69F7F /* Pods-LNICoverFlowLayout_Demo */ = {
@@ -157,22 +156,6 @@
 			);
 			name = "Pods-LNICoverFlowLayout_Demo";
 			path = "Target Support Files/Pods-LNICoverFlowLayout_Demo";
-			sourceTree = "<group>";
-		};
-		CBE56E4455337C7D6A5C861CD7444243 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				699184317295FB3E9BD099B11609A5D8 /* LNICoverFlowLayout */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		F06AD87A36559B5E27013AABF9DE611B /* LNICoverFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				65F1F1BF4919A9C0F3CDD90A4EDDD338 /* Classes */,
-			);
-			path = LNICoverFlowLayout;
 			sourceTree = "<group>";
 		};
 		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
@@ -228,7 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DA707A0C348992ECAFC242E48797E60 /* Build configuration list for PBXNativeTarget "LNICoverFlowLayout" */;
 			buildPhases = (
-				AFB4E8E023224ACCB25AE7EFD708C64C /* Sources */,
+				FC8889ABCD8B4F070A2703E801E1C615 /* Sources */,
 				6D1BCA7DFEE14CDF4D59A23742D515E0 /* Frameworks */,
 				8B14516164EA5F04D2FBD034A178FCDB /* Headers */,
 			);
@@ -277,12 +260,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFB4E8E023224ACCB25AE7EFD708C64C /* Sources */ = {
+		FC8889ABCD8B4F070A2703E801E1C615 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7E651A996399CFC029E7B2879DD3AA /* LNICoverFlowLayout-dummy.m in Sources */,
-				1A6FCC46E7C825A97445157746E54653 /* LNICoverFlowLayout.swift in Sources */,
+				EFB53DB4552CA6388422DD6C8FEECB87 /* LNICoverFlowLayout-dummy.m in Sources */,
+				F34652D1F20C532FC19A6830BE66615E /* LNICoverFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +283,7 @@
 /* Begin XCBuildConfiguration section */
 		0C0D88284C0A4646B7AFD23BD444A9E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C5F74D658D611F8E3702DCE0CC8884 /* LNICoverFlowLayout.xcconfig */;
+			baseConfigurationReference = 25BBFFDDC8EA18D512E774AF802E6EC4 /* LNICoverFlowLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -477,7 +460,7 @@
 		};
 		CFA2CD6AF441B3CAE8BAE99FCA84EED5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C5F74D658D611F8E3702DCE0CC8884 /* LNICoverFlowLayout.xcconfig */;
+			baseConfigurationReference = 25BBFFDDC8EA18D512E774AF802E6EC4 /* LNICoverFlowLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
