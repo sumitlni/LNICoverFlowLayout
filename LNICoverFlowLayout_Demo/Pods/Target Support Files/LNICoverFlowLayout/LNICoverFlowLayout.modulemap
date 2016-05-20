@@ -1,0 +1,6 @@
+framework module LNICoverFlowLayout {
+  umbrella header "LNICoverFlowLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

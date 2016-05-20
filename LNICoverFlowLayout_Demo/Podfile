@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+
+target 'LNICoverFlowLayout_Demo' do
+  use_frameworks!
+
+  pod 'LNICoverFlowLayout', :path => '../'
+end

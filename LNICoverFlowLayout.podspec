@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "LNICoverFlowLayout"
   s.version          = "0.1.0"
-  s.summary          = "A short description of LNICoverFlowLayout."
+  s.summary          = "Swift-only implementation of YRCoverFlowLayout. Also supports CocoaPods."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,21 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Re-implemented YRCoverFlowLayout in Swift.
+
+You can either drag & drop the single file or use CocoaPods.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/LNICoverFlowLayout"
+  s.homepage         = "https://github.com/sumitlni/LNICoverFlowLayout"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Sumit Chawla" => "sumit@loudnoiseinc.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/LNICoverFlowLayout.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/sumitlni/LNICoverFlowLayout.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/LoudNoiseInc'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'LNICoverFlowLayout/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'LNICoverFlowLayout' => ['LNICoverFlowLayout/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
