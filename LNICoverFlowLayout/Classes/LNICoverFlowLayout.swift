@@ -39,8 +39,8 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
      */
     public var maxCoverDegree:CGFloat = 45 {
         didSet {
-            if maxCoverDegree < 0 {
-                maxCoverDegree = 0
+            if maxCoverDegree < -360 {
+                maxCoverDegree = -360
             } else if maxCoverDegree > 360 {
                 maxCoverDegree = 360
             }
