@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LNICoverFlowLayout"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "Swift-only implementation of YRCoverFlowLayout. Also supports CocoaPods."
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 Re-implemented YRCoverFlowLayout in Swift.
 
-You can either drag & drop the single file or use CocoaPods.
+Supports CocoaPods. You can also drag & drop the single Swift file but using CocoaPods is recommended.
                        DESC
 
   s.homepage         = "https://github.com/sumitlni/LNICoverFlowLayout"

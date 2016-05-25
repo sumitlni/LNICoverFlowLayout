@@ -14,11 +14,13 @@ From YRCoverFlowLayout description: *You don’t need to worry about items(cells
 
 # Installation
 
-1. Simply drag&drop LNICoverFlowLayout.swift into your project.
-        OR
-   If using CocoaPods, add the following line to Podfile:
+1. Add the following line to Podfile:
         `pod 'LNICoverFlowLayout'`
-2. Set custom layout class in your collection view to LNICoverFlowLayout.
+        and run `pod install`
+2. Set custom layout class in your collection view to LNICoverFlowLayout. Make sure you change the Module to LNICoverFlowLayout as well.
+![Change Both Class and Module](/ChangeModule.png)
+3. Add an outlet from the cover flow layout into your UICollectionView dataSource class. You can customize the cover flow layout using the outlet, as shown below.
+![Customize Layout](/CustomizingLayout.png)
 3. Design your cell in collection view.
 4. Return your cell in datasource methods.
 5. Scroll and enjoy.
@@ -60,4 +62,4 @@ Cover flow, custom layout, collection view, swift
 
 # Version
 
-v0.1.0
+v0.1.1
