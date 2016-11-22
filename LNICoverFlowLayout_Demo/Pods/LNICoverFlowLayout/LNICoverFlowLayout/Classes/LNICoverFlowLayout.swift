@@ -200,12 +200,12 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         let cvW = collectionViewWidth()
         
         // Find min and max rows that can be determined for sure
-        var minRow = Int(max(rect.origin.x/cvW, 0))
+        var minRow = min(max(Int(rect.origin.x/cvW), 0), noI - 1)
         var maxRow = 0
         if cvW != 0 {
-            maxRow = Int(CGRectGetMaxX(rect) / cvW)
+            maxRow = min(Int(rect.maxX / cvW), noI - 1)
         }
-        
+
         // Additional check for rows that also can be included (our rows are moving depending on content size)
         let candidateMinRow = max(minRow-1, 0)
         
@@ -214,7 +214,7 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         }
         
         let candidateMaxRow = min(maxRow + 1, noI - 1)
-        if minXForRow(candidateMaxRow) <= CGRectGetMaxX(rect) {
+        if minXForRow(candidateMaxRow) <= rect.maxX {
             maxRow = candidateMaxRow
         }
         
