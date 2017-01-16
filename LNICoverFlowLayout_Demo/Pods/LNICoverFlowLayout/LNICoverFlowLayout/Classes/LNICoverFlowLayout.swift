@@ -2,7 +2,7 @@
 //    
 //    The MIT License (MIT)
 //
-//    Copyright (c) 2016 Loud Noise Inc.
+//    Copyright (c) 2017 Loud Noise Inc.
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -25,19 +25,19 @@
 import UIKit
 
 /**
-    Collection Flow Layout in Swift.
+    Collection Flow Layout in Swift 3.
  
     Adds cover flow effect to collection view scrolling.
  
     Currently supports only horizontal flow direction.
  */
-public class LNICoverFlowLayout:UICollectionViewFlowLayout {
+open class LNICoverFlowLayout:UICollectionViewFlowLayout {
     /**
      *  Maximum degree that can be applied to individual item.
      
      *  Default to 45 degrees.
      */
-    public var maxCoverDegree:CGFloat = 45 {
+    open var maxCoverDegree:CGFloat = 45 {
         didSet {
             if maxCoverDegree < 0 {
                 maxCoverDegree = 0
@@ -55,7 +55,7 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
      *  0 means that items are placed within a continuous line.
      *  0.5 means that half of 3rd and 1st item will be behind 2nd.
      */
-    public var coverDensity:CGFloat = 0.25 {
+    open var coverDensity:CGFloat = 0.25 {
         didSet {
             if coverDensity < 0 {
                 coverDensity = 0
@@ -69,7 +69,7 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
      *  Min opacity that can be applied to individual item.
      *  Default to 1.0 (alpha 100%).
      */
-    public var minCoverOpacity:CGFloat = 1.0 {
+    open var minCoverOpacity:CGFloat = 1.0 {
         didSet {
             if minCoverOpacity < 0 {
                 minCoverOpacity = 0
@@ -83,43 +83,50 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
      *  Min scale that can be applied to individual item.
      *  Default to 1.0 (no scale).
      */
-    public var minCoverScale:CGFloat = 1.0
-    // TODO: Add validation for correct values here
+    open var minCoverScale:CGFloat = 1.0  {
+        didSet {
+            if minCoverScale < 0 {
+                minCoverScale = 0
+            } else if minCoverScale > 1 {
+                minCoverScale = 1
+            }
+        }
+    }
     
     // Private Constant. Not a good naming convention but keeping as close to inspiration as possible
-    private let kDistanceToProjectionPlane:CGFloat = 500.0
+    fileprivate let kDistanceToProjectionPlane:CGFloat = 500.0
 
     
     // MARK: Overrides
     
     // Thanks to property initializations we do not need to override init(*)
     
-    override public func prepareLayout() {
-        super.prepareLayout()
+    override open func prepare() {
+        super.prepare()
         
         // TODO: Why do we have these limitations? Can the Swift version support these?
-        assert(self.collectionView?.numberOfSections() == 1, "[LNICoverFlowLayout]: Multiple sections are not supported")
-        assert(self.scrollDirection == .Horizontal, "[LNICoverFlowLayout]: Vertical scrolling is not supported")
+        assert(self.collectionView?.numberOfSections == 1, "[LNICoverFlowLayout]: Multiple sections are not supported")
+        assert(self.scrollDirection == .horizontal, "[LNICoverFlowLayout]: Vertical scrolling is not supported")
     }
     
-    override public func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
-    override public func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override open func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let idxPaths = indexPathsContainedInRect(rect)
         
         var resultingAttributes = [UICollectionViewLayoutAttributes]()
         
         for path in idxPaths {
-            resultingAttributes.append(layoutAttributesForItemAtIndexPath(path))
+            resultingAttributes.append(layoutAttributesForItem(at: path))
         }
         
         return resultingAttributes
     }
     
-    override public func layoutAttributesForItemAtIndexPath(indexPath:NSIndexPath)->UICollectionViewLayoutAttributes {
-        let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath:indexPath)
+    override open func layoutAttributesForItem(at indexPath:IndexPath)->UICollectionViewLayoutAttributes {
+        let attributes = UICollectionViewLayoutAttributes(forCellWith:indexPath)
         
         attributes.size = self.itemSize
         attributes.center = CGPoint(x: collectionViewWidth()*CGFloat(indexPath.row) + collectionViewWidth(),
@@ -130,42 +137,42 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         return interpolateAttributes(attributes, forOffset: contentOffsetX)
     }
     
-    override public func collectionViewContentSize() -> CGSize {
+    override open var collectionViewContentSize : CGSize {
         if let collectionView = collectionView {
-            return CGSize(width: collectionView.bounds.size.width * CGFloat(collectionView.numberOfItemsInSection(0)),
+            return CGSize(width: collectionView.bounds.size.width * CGFloat(collectionView.numberOfItems(inSection: 0)),
                           height: collectionView.bounds.size.height)
         }
-        return CGSizeZero
+        return CGSize.zero
     }
     
     // MARK: Accessors
-    private func collectionViewHeight() -> CGFloat {
+    fileprivate func collectionViewHeight() -> CGFloat {
         let height = collectionView?.bounds.size.height ?? 0
         return height
     }
     
-    private func collectionViewWidth() -> CGFloat {
+    fileprivate func collectionViewWidth() -> CGFloat {
         let width = collectionView?.bounds.size.width ?? 0
         return width
     }
     
     // MARK: Private
     
-    private func itemCenterForRow(row:Int)->CGPoint {
-        let collectionViewSize = collectionView?.bounds.size ?? CGSizeZero
+    fileprivate func itemCenterForRow(_ row:Int)->CGPoint {
+        let collectionViewSize = collectionView?.bounds.size ?? CGSize.zero
         return CGPoint(x: CGFloat(row) * collectionViewSize.width + collectionViewSize.width / 2,
                        y: collectionViewSize.height/2)
     }
     
-    private func minXForRow(row:Int)->CGFloat {
+    fileprivate func minXForRow(_ row:Int)->CGFloat {
         return itemCenterForRow(row - 1).x + (1.0 / 2 - self.coverDensity) * self.itemSize.width
     }
     
-    private func maxXForRow(row:Int)->CGFloat {
+    fileprivate func maxXForRow(_ row:Int)->CGFloat {
         return itemCenterForRow(row + 1).x - (1.0 / 2 - self.coverDensity) * self.itemSize.width
     }
     
-    private func minXCenterForRow(row:Int)->CGFloat {
+    fileprivate func minXCenterForRow(_ row:Int)->CGFloat {
         let halfWidth = self.itemSize.width / 2
         let maxRads = degreesToRad(self.maxCoverDegree)
         
@@ -176,7 +183,7 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         return prevItemRightEdge - (self.coverDensity * self.itemSize.width) + projectedLeftEdgeLocal
     }
     
-    private func maxXCenterForRow(row:Int)->CGFloat {
+    fileprivate func maxXCenterForRow(_ row:Int)->CGFloat {
         let halfWidth = self.itemSize.width / 2
         let maxRads = degreesToRad(self.maxCoverDegree)
         
@@ -187,12 +194,12 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         return nextItemLeftEdge + (self.coverDensity * self.itemSize.width) - projectedRightEdgeLocal
     }
     
-    private func degreesToRad(degrees:CGFloat)->CGFloat {
+    fileprivate func degreesToRad(_ degrees:CGFloat)->CGFloat {
         return CGFloat(Double(degrees) * M_PI / 180)
     }
     
-    private func indexPathsContainedInRect(rect:CGRect)->[NSIndexPath] {
-        let noI = collectionView?.numberOfItemsInSection(0) ?? 0
+    fileprivate func indexPathsContainedInRect(_ rect:CGRect)->[IndexPath] {
+        let noI = collectionView?.numberOfItems(inSection: 0) ?? 0
         if noI == 0 {
             return []
         }
@@ -203,7 +210,7 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         var minRow = Int(max(rect.origin.x/cvW, 0))
         var maxRow = 0
         if cvW != 0 {
-            maxRow = Int(CGRectGetMaxX(rect) / cvW)
+            maxRow = Int(rect.maxX / cvW)
         }
         
         // Additional check for rows that also can be included (our rows are moving depending on content size)
@@ -214,21 +221,21 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         }
         
         let candidateMaxRow = min(maxRow + 1, noI - 1)
-        if minXForRow(candidateMaxRow) <= CGRectGetMaxX(rect) {
+        if minXForRow(candidateMaxRow) <= rect.maxX {
             maxRow = candidateMaxRow
         }
         
         // Simply add index paths between min and max.
-        var resultingIdxPaths = [NSIndexPath]()
+        var resultingIdxPaths = [IndexPath]()
         
         for i in minRow...maxRow {
-            resultingIdxPaths.append(NSIndexPath(forRow: i, inSection: 0))
+            resultingIdxPaths.append(IndexPath(row: i, section: 0))
         }
         
         return resultingIdxPaths
     }
     
-    private func interpolateAttributes(attributes:UICollectionViewLayoutAttributes, forOffset offset:CGFloat)->UICollectionViewLayoutAttributes {
+    fileprivate func interpolateAttributes(_ attributes:UICollectionViewLayoutAttributes, forOffset offset:CGFloat)->UICollectionViewLayoutAttributes {
 
         let attributesPath = attributes.indexPath
         
@@ -242,7 +249,7 @@ public class LNICoverFlowLayout:UICollectionViewFlowLayout {
         // Interpolate by formula
         let interpolatedX = min(max(minX + ((spanX / (maxInterval - minInterval)) * (offset - minInterval)), minX), maxX)
         
-        attributes.center = CGPointMake(interpolatedX, attributes.center.y)
+        attributes.center = CGPoint(x: interpolatedX, y: attributes.center.y)
         
         var transform = CATransform3DIdentity
         
