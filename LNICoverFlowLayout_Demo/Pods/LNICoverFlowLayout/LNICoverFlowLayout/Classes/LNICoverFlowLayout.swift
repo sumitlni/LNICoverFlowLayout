@@ -104,7 +104,6 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
     override open func prepare() {
         super.prepare()
         
-        // TODO: Why do we have these limitations? Can the Swift version support these?
         assert(self.collectionView?.numberOfSections == 1, "[LNICoverFlowLayout]: Multiple sections are not supported")
         assert(self.scrollDirection == .horizontal, "[LNICoverFlowLayout]: Vertical scrolling is not supported")
     }
@@ -228,8 +227,10 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
         // Simply add index paths between min and max.
         var resultingIdxPaths = [IndexPath]()
         
-        for i in minRow...maxRow {
-            resultingIdxPaths.append(IndexPath(row: i, section: 0))
+        if minRow < maxRow {
+            for i in minRow...maxRow {
+                resultingIdxPaths.append(IndexPath(row: i, section: 0))
+            }
         }
         
         return resultingIdxPaths
