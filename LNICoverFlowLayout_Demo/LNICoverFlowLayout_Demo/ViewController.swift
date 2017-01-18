@@ -5,7 +5,7 @@
 //
 //    The MIT License (MIT)
 //
-//    Copyright (c) 2016 Loud Noise Inc.
+//    Copyright (c) 2017 Loud Noise Inc.
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -41,8 +41,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var minOpacityValueLabel:UILabel!
     @IBOutlet weak var minScaleValueLabel:UILabel!
     
-    var originalItemSize = CGSizeZero
-    var originalCollectionViewSize = CGSizeZero
+    var originalItemSize = CGSize.zero
+    var originalCollectionViewSize = CGSize.zero
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -59,9 +59,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         generateDatasource()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
             self.photosCollectionView.reloadData()
         }
     }
@@ -92,28 +92,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // MARK: Callbacks
     
-    @IBAction func degreesSliderValueChanged(sender:UISlider) {
+    @IBAction func degreesSliderValueChanged(_ sender:UISlider) {
         coverFlowLayout.maxCoverDegree = CGFloat(sender.value)
         maxDegreesValueLabel.text = String(format: "%.2f", coverFlowLayout.maxCoverDegree)
         
         photosCollectionView.reloadData()
     }
     
-    @IBAction func densitySliderValueChanged(sender:UISlider) {
+    @IBAction func densitySliderValueChanged(_ sender:UISlider) {
         coverFlowLayout.coverDensity = CGFloat(sender.value)
         coverDensityValueLabel.text = String(format: "%.2f", coverFlowLayout.coverDensity)
         
         photosCollectionView.reloadData()
     }
     
-    @IBAction func opacitySliderValueChanged(sender:UISlider) {
+    @IBAction func opacitySliderValueChanged(_ sender:UISlider) {
         coverFlowLayout.minCoverOpacity = CGFloat(sender.value)
         minOpacityValueLabel.text = String(format: "%.2f", coverFlowLayout.minCoverOpacity)
         
         photosCollectionView.reloadData()
     }
     
-    @IBAction func scaleSliderValueChanged(sender:UISlider) {
+    @IBAction func scaleSliderValueChanged(_ sender:UISlider) {
         coverFlowLayout.minCoverScale = CGFloat(sender.value)
         minScaleValueLabel.text = String(format: "%.2f", coverFlowLayout.minCoverScale)
         
@@ -121,7 +121,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     // MARK: Private
-    private func generateDatasource() {
+    fileprivate func generateDatasource() {
         photoModelsDatasource = [
             PhotoModel(image: UIImage(named:"nature1")!, imageDescription: "Lake and forest."),
             PhotoModel(image: UIImage(named:"nature2")!, imageDescription: "Beautiful bench."),
@@ -135,12 +135,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         ]
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoModelsDatasource.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CustomCollectionViewCell.kCustomCellIdentifier, forIndexPath: indexPath) as! CustomCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.kCustomCellIdentifier, for: indexPath) as! CustomCollectionViewCell
         
         cell.photoModel = photoModelsDatasource[indexPath.row]
         
