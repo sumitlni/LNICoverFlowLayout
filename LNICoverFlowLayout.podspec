@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LNICoverFlowLayout"
-  s.version          = "0.1.1"
+  s.version          = "1.0.0"
   s.summary          = "Swift-only implementation of YRCoverFlowLayout. Also supports CocoaPods."
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Re-implemented YRCoverFlowLayout in Swift.
+Re-implemented YRCoverFlowLayout in Swift 3.
 
 Supports CocoaPods. You can also drag & drop the single Swift file but using CocoaPods is recommended.
                        DESC
@@ -30,7 +30,7 @@ Supports CocoaPods. You can also drag & drop the single Swift file but using Coc
   s.source           = { :git => "https://github.com/sumitlni/LNICoverFlowLayout.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/LoudNoiseInc'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'LNICoverFlowLayout/Classes/**/*'
 
