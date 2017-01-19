@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D5718519C0DDD2CDB29487CFD5363484'
+               BlueprintIdentifier = '254BCBF5BB02ED2B6CC8365B73E798C2'
                BlueprintName = 'LNICoverFlowLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'LNICoverFlowLayout.framework'>

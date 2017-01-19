@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1577BB67EC95A6FED7948DCC7E69BA39"
+               BlueprintIdentifier = "33A81D4CE790BE35C8D8C7223B2B182E"
                BuildableName = "Pods_LNICoverFlowLayout_Demo.framework"
                BlueprintName = "Pods-LNICoverFlowLayout_Demo"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1577BB67EC95A6FED7948DCC7E69BA39"
+            BlueprintIdentifier = "33A81D4CE790BE35C8D8C7223B2B182E"
             BuildableName = "Pods_LNICoverFlowLayout_Demo.framework"
             BlueprintName = "Pods-LNICoverFlowLayout_Demo"
             ReferencedContainer = "container:Pods.xcodeproj">

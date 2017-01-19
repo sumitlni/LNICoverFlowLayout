@@ -41,6 +41,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var minOpacityValueLabel:UILabel!
     @IBOutlet weak var minScaleValueLabel:UILabel!
     
+    @IBOutlet weak var maxDegreesSlider: UISlider!
+    @IBOutlet weak var coverDensitySlider: UISlider!
+    @IBOutlet weak var minScaleSlider: UISlider!
+    @IBOutlet weak var minOpacitySlider: UISlider!
+    
     var originalItemSize = CGSize.zero
     var originalCollectionViewSize = CGSize.zero
     
@@ -84,10 +89,32 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             height: photosCollectionView.bounds.size.height * originalItemSize.height / originalCollectionViewSize.height
         )
         
+        setInitialValues()
+        
         // Forcely tell collection view to reload current data.
         photosCollectionView.setNeedsLayout()
         photosCollectionView.layoutIfNeeded()
         photosCollectionView.reloadData()
+    }
+    
+    fileprivate func setInitialValues() {
+        // Setting some nice defaults, ignore if you don't like them
+        coverFlowLayout.maxCoverDegree = 45
+        coverFlowLayout.coverDensity = 0.06
+        coverFlowLayout.minCoverScale = 0.69
+        coverFlowLayout.minCoverOpacity = 0.50
+        
+        maxDegreesValueLabel.text = String(format: "%.2f", coverFlowLayout.maxCoverDegree)
+        maxDegreesSlider.value = Float(coverFlowLayout.maxCoverDegree)
+        
+        coverDensityValueLabel.text = String(format: "%.2f", coverFlowLayout.coverDensity)
+        coverDensitySlider.value = Float(coverFlowLayout.coverDensity)
+        
+        minOpacityValueLabel.text = String(format: "%.2f", coverFlowLayout.minCoverOpacity)
+        minOpacitySlider.value = Float(coverFlowLayout.minCoverOpacity)
+        
+        minScaleValueLabel.text = String(format: "%.2f", coverFlowLayout.minCoverScale)
+        minScaleSlider.value = Float(coverFlowLayout.minCoverScale)
     }
     
     // MARK: Callbacks
