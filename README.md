@@ -63,4 +63,4 @@ Cover flow, custom layout, collection view, swift
 
 # Version
 
-v1.0.0
+v1.0.1
