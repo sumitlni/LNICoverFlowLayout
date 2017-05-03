@@ -174,6 +174,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let width = collectionView.collectionViewLayout.collectionViewContentSize.width / CGFloat(collectionView.numberOfItems(inSection: indexPath.section))
+        let resultingOffset =  (width * CGFloat(indexPath.row))
+        collectionView.setContentOffset(CGPoint(x: resultingOffset, y: 0), animated: true)
+    }
+    
+    // Next two functions added to demonstrate how to get the index of cell being shown.
+    private func getCurrentRow() {
+        let width = photosCollectionView.collectionViewLayout.collectionViewContentSize.width / CGFloat(photosCollectionView.numberOfItems(inSection: 0))
+        
+        let currentRow = photosCollectionView.contentOffset.x / width
+        
+        print("Currently we are displaying item number \(currentRow)")
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?)  {
+        if motion == .motionShake {
+            getCurrentRow()
+        }
+    }
+    
 }
 
 // Model for storing image information

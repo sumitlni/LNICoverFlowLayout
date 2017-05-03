@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LNICoverFlowLayout"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Swift-only implementation of YRCoverFlowLayout. Also supports CocoaPods."
 
 # This description is used to generate tags and improve search results.

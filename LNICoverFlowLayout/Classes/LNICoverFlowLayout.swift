@@ -194,7 +194,7 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
     }
 
     fileprivate func degreesToRad(_ degrees:CGFloat)->CGFloat {
-        return CGFloat(Double(degrees) * M_PI / 180)
+        return CGFloat(Double(degrees) * .pi / 180)
     }
 
     fileprivate func indexPathsContainedInRect(_ rect:CGRect)->[IndexPath] {
@@ -227,7 +227,8 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
         // Simply add index paths between min and max.
         var resultingIdxPaths = [IndexPath]()
 
-        if minRow < maxRow {
+        // Fix for issue #8 - Thanks gstrobl17
+        if minRow < maxRow || noI == 1 {
             for i in minRow...maxRow {
                 resultingIdxPaths.append(IndexPath(row: i, section: 0))
             }
