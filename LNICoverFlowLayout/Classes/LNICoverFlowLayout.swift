@@ -228,7 +228,7 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
         var resultingIdxPaths = [IndexPath]()
 
         // Fix for issue #8 - Thanks gstrobl17
-        if minRow < maxRow || noI == 1 {
+        if maxRow > 0 && (minRow < maxRow || noI == 1) {
             for i in minRow...maxRow {
                 resultingIdxPaths.append(IndexPath(row: i, section: 0))
             }
