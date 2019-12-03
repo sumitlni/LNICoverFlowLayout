@@ -1,6 +1,6 @@
 # LNICoverFlowLayout
 Swift-only implementation of YRCoverFlowLayout. Also supports CocoaPods.
-Only Swift 3 is supported.
+Supports Swift 5. To use with Swift 3, select swift3 branch instead.
 
 # Description
 
@@ -63,4 +63,4 @@ Cover flow, custom layout, collection view, swift
 
 # Version
 
-v1.0.1
+v2.0.0

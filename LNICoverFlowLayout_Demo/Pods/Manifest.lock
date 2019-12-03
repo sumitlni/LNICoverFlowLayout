@@ -1,12 +1,12 @@
 PODS:
-  - LNICoverFlowLayout (1.0.0)
+  - LNICoverFlowLayout (1.0.2)
 
 DEPENDENCIES:
   - LNICoverFlowLayout
 
 SPEC CHECKSUMS:
-  LNICoverFlowLayout: 4e63ee8280fc2a7554d98b7c5b5b2e91057b0915
+  LNICoverFlowLayout: 6b3ab0dfbb7d2eb7448abf49262f4eb178f5659e
 
 PODFILE CHECKSUM: 3da514073f6f8aafcecfc3d4f2a83c13d922d1ac
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

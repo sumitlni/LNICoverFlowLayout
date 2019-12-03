@@ -2,7 +2,7 @@
 //
 //    The MIT License (MIT)
 //
-//    Copyright (c) 2017 Loud Noise Inc.
+//    Copyright (c) 2019 Loud Noise Inc.
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
 //    of this software and associated documentation files (the "Software"), to deal
@@ -188,7 +188,7 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
 
         let center = itemCenterForRow(row + 1).x
         let nextItemLeftEdge = center - halfWidth
-        let projectedRightEdgeLocal = fabs(halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (-halfWidth * sin(maxRads) - kDistanceToProjectionPlane))
+        let projectedRightEdgeLocal = abs(halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (-halfWidth * sin(maxRads) - kDistanceToProjectionPlane))
 
         return nextItemLeftEdge + (self.coverDensity * self.itemSize.width) - projectedRightEdgeLocal
     }
@@ -227,8 +227,8 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
         // Simply add index paths between min and max.
         var resultingIdxPaths = [IndexPath]()
 
-        // Fix for 1-item collections - see issue #8 - Thanks gstrobl17
-        if minRow < maxRow || noI == 1 {
+        // Fix for issue #8 - Thanks gstrobl17
+        if maxRow > 0 && (minRow < maxRow || noI == 1) {
             for i in minRow...maxRow {
                 resultingIdxPaths.append(IndexPath(row: i, section: 0))
             }

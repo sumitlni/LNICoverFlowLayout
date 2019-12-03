@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LNICoverFlowLayout"
-  s.version          = "1.0.2"
+  s.version          = "2.0.0"
   s.summary          = "Swift-only implementation of YRCoverFlowLayout. Also supports CocoaPods."
 
 # This description is used to generate tags and improve search results.
@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Re-implemented YRCoverFlowLayout in Swift 3.
-Version 1.0.2 closes issue 9.
+Re-implemented YRCoverFlowLayout in Swift 5.
+Version 2.0.0 supports Swift 5 and Xcode 11.
 
 Supports CocoaPods. You can also drag & drop the single Swift file but using CocoaPods is recommended.
                        DESC

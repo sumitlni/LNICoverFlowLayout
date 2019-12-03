@@ -190,7 +190,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print("Currently we are displaying item number \(currentRow)")
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?)  {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)  {
         if motion == .motionShake {
             getCurrentRow()
         }
