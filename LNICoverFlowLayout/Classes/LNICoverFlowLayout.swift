@@ -227,11 +227,13 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
         // Simply add index paths between min and max.
         var resultingIdxPaths = [IndexPath]()
 
-        // Fix for issue #8 - Thanks gstrobl17
-        if maxRow > 0 && (minRow < maxRow || noI == 1) {
+        // Fix for 1-item collections - see issue #8 - Thanks gstrobl17
+        if maxRow > 0 && (minRow < maxRow || noI != 1) {
             for i in minRow...maxRow {
                 resultingIdxPaths.append(IndexPath(row: i, section: 0))
             }
+        } else {
+            resultingIdxPaths = [IndexPath(row: 0, section: 0)]
         }
 
         return resultingIdxPaths
