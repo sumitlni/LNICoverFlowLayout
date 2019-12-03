@@ -188,7 +188,7 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
 
         let center = itemCenterForRow(row + 1).x
         let nextItemLeftEdge = center - halfWidth
-        let projectedRightEdgeLocal = fabs(halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (-halfWidth * sin(maxRads) - kDistanceToProjectionPlane))
+        let projectedRightEdgeLocal = abs(halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (-halfWidth * sin(maxRads) - kDistanceToProjectionPlane))
 
         return nextItemLeftEdge + (self.coverDensity * self.itemSize.width) - projectedRightEdgeLocal
     }
