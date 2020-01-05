@@ -179,7 +179,7 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
         let prevItemRightEdge = center + halfWidth
         let projectedLeftEdgeLocal = halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (kDistanceToProjectionPlane + halfWidth * sin(maxRads))
 
-        return prevItemRightEdge - (self.coverDensity * self.itemSize.width) + projectedLeftEdgeLocal
+        return prevItemRightEdge - (self.coverDensity * self.itemSize.width) + projectedLeftEdgeLocal + minimumInteritemSpacing
     }
 
     fileprivate func maxXCenterForRow(_ row:Int)->CGFloat {
@@ -190,7 +190,7 @@ open class LNICoverFlowLayout:UICollectionViewFlowLayout {
         let nextItemLeftEdge = center - halfWidth
         let projectedRightEdgeLocal = abs(halfWidth * cos(maxRads) * kDistanceToProjectionPlane / (-halfWidth * sin(maxRads) - kDistanceToProjectionPlane))
 
-        return nextItemLeftEdge + (self.coverDensity * self.itemSize.width) - projectedRightEdgeLocal
+        return nextItemLeftEdge + (self.coverDensity * self.itemSize.width) - projectedRightEdgeLocal - minimumInteritemSpacing
     }
 
     fileprivate func degreesToRad(_ degrees:CGFloat)->CGFloat {
